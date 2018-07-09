@@ -375,7 +375,8 @@ public abstract class BaseLivyInterpreter extends Interpreter {
                                      boolean displayAppInfo,
                                      boolean appendSessionExpired,
                                      boolean appendSessionDead) throws LivyException {
-    return interpret(code, sharedInterpreter.isSupported() ? getSessionKind() : null,
+    return interpret(code,
+        sharedInterpreter != null && sharedInterpreter.isSupported() ? getSessionKind() : null,
         paragraphId, displayAppInfo, appendSessionExpired, appendSessionDead);
   }
 
